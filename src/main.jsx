@@ -4,6 +4,7 @@ import App from './App.jsx'
 import './index.css'
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import TestPage from "./components/TestPage.jsx";
+import "@fontsource/poppins";
 
 const router = createBrowserRouter([
     {

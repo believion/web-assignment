@@ -1,4 +1,4 @@
-import {HeartIcon, MenuIcon, ShoppingBagIcon, XIcon} from "lucide-react";
+import { HeartIcon, MenuIcon, ShoppingBagIcon, XIcon } from "lucide-react";
 import { useState } from "react";
 import ButtonIcon from "./ButtonIcon.jsx";
 
@@ -6,9 +6,9 @@ const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      {/*{!isOpen && (*/}
       <div
-        className={`fixed left-0 ease-in-out transition-all duration-150 top-0 bottom-0 w-[${isOpen ? "300px" : "150px"}] bg-neutral-800/80 border-r-8 border-customAmber z-30 flex flex-col items-start pt-10`}
+          style={{width: isOpen ? "300px" : "150px"}}
+        className={"transition-width duration-150 ease-in-out fixed left-0 top-0 bottom-0 bg-neutral-800/80 border-r-8 border-customAmber z-30 flex flex-col items-start pt-10"}
       >
         {isOpen ? (
           <button onClick={() => setIsOpen(false)}>
@@ -24,6 +24,8 @@ const Sidebar = () => {
             <img
               src={"/ChefMattBanner.png"}
               alt={"Chef Matt"}
+              width={150}
+              height={150}
               className={"-rotate-90 scale-[2.5] mb-20"}
             />
           </div>
@@ -60,10 +62,14 @@ const Sidebar = () => {
                 <span className={"text-customAmber"}>070-7782-9137</span>
               </div>
               <div className={"w-full border-2 border-white mt-2"} />
-                <div className={"flex flex-row w-full h-full items-center pl-8 gap-6"}>
-                    <ButtonIcon icon={ShoppingBagIcon} text={"CART"} />
-                    <ButtonIcon icon={HeartIcon} text={"wishlist"} />
-                </div>
+              <div
+                className={
+                  "flex flex-row w-full h-full items-center pl-8 gap-6"
+                }
+              >
+                <ButtonIcon icon={ShoppingBagIcon} text={"CART"} />
+                <ButtonIcon icon={HeartIcon} text={"wishlist"} />
+              </div>
             </div>
           </div>
         )}
