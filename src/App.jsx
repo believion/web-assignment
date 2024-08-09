@@ -1,6 +1,10 @@
 import "./App.css";
 import PaginationComp from "./components/PaginationComp.jsx";
 import ProductCarousel from "./components/ProductCarousel.jsx";
+import BottomBannerComp from "./components/BottomBannerComp.jsx";
+import Footer from "./components/Footer.jsx";
+import Sidebar from "./components/Sidebar.jsx";
+import {BadgeCheckIcon, HeadphonesIcon, ShoppingBagIcon} from "lucide-react";
 
 const landingPageData = [
   {
@@ -42,17 +46,46 @@ const offersData = [
     alt: "Item1",
   },
 ];
+const gridData = [
+  {
+    src: "/grid1.png",
+    alt: "grid1",
+  },
+  {
+    src: "/grid2.png",
+    alt: "grid2",
+  },
+  {
+    src: "/grid3.jfif",
+    alt: "grid3",
+  },
+  {
+    src: "/grid4.jfif",
+    alt: "grid4",
+  },
+];
+const bottomBannerData = [
+  {
+    icon: ShoppingBagIcon,
+    title: "free shipping worldwide",
+    desc: "guaranteed delivery"
+  },
+  {
+    icon: HeadphonesIcon,
+    title: "24/7 customer service",
+    desc: "Text Us 24/7 at 070-7782-9137"
+  },
+  {
+    icon: BadgeCheckIcon,
+    title: "QUALITY GUARANTEE!",
+    desc: "Send Within 30 Days"
+  },
+]
 
 function App() {
   return (
     <div className="fixed w-full h-full bg-neutral-950 overflow-y-auto overflow-x-hidden">
-      <div
-        className={
-          "fixed left-0 top-0 bottom-0 w-[150px] bg-neutral-800/80 border-r-4 border-amber-700 z-30 flex flex-col items-center"
-        }
-      >
-        {/* Sidebar content will be added here*/}
-      </div>
+      <Sidebar />
       <div className="flex flex-col w-full h-auto">
         <div className="w-screen h-screen relative">
           <PaginationComp data={landingPageData} />
@@ -86,9 +119,7 @@ function App() {
                 <h1 className={"uppercase text-2xl text-customAmber"}>
                   Chef Matt Products
                 </h1>
-                <div className={"w-full border-2 border-customAmber"}>
-
-                </div>
+                <div className={"w-full border-2 border-customAmber"}></div>
                 <div>
                   <p>
                     Shop Gourmet Chef Quality products from the Chef Matt brand
@@ -103,7 +134,7 @@ function App() {
           </div>
           <div
             className={
-              "h-[350px] w-[90vw] bg-white mt-20 relative ml-10 right-[40px] z-20 flex justify-center"
+              "h-[350px] w-full origin-left bg-white mt-20 relative ml-10 right-[40px] z-20 flex justify-center"
             }
           >
             <PaginationComp data={offersData} />
@@ -127,38 +158,23 @@ function App() {
             </div>
           </div>
           <div
-            className={"h-auto w-[90vw] grid grid-cols-2 bg-amber-500 mt-10"}
+            className={
+              "h-auto w-full origin-left grid grid-cols-2 bg-amber-500 mt-10"
+            }
           >
-            <div className={"w-full h-full bg-white"}>
-              <img
-                src={"/grid1.png"}
-                alt={"grid1"}
-                className={"object-contain w-full h-full"}
-              />
-            </div>
-            <div className={"w-full h-full bg-blue-500"}>
-              <img
-                src={"/grid2.png"}
-                alt={"grid2"}
-                className={"object-contain w-full h-full"}
-              />
-            </div>
-            <div className={"w-full h-full bg-lime-500"}>
-              <img
-                src={"/grid3.jfif"}
-                alt={"grid3"}
-                className={"object-contain w-full h-full"}
-              />
-            </div>
-            <div className={"w-full h-full bg-teal-500"}>
-              <img
-                src={"/grid4.jfif"}
-                alt={"grid4"}
-                className={"object-contain w-full h-full"}
-              />
-            </div>
+            {gridData.map((gridItem, index) => (
+              <div key={index} className={"w-full h-full bg-white"}>
+                <img
+                  src={gridItem.src}
+                  alt={gridItem.alt}
+                  className={"object-contain w-full h-full"}
+                />
+              </div>
+            ))}
           </div>
-          <div className={"h-auto w-[90vw] mt-0 bg-amber-500 relative"}>
+          <div
+            className={"h-auto w-full origin-left mt-0 bg-amber-500 relative"}
+          >
             <img
               src={"/steak.jfif"}
               alt={"steak"}
@@ -171,7 +187,7 @@ function App() {
             >
               <div
                 className={
-                  "flex flex-col gap-8 w-full items-start p-4 justify-center"
+                  "flex flex-col gap-8 w-full items-start p-4 justify-center ml-10"
                 }
               >
                 <h1
@@ -194,13 +210,27 @@ function App() {
                       "p-4 bg-neutral-50/10 border-2 border-white w-[450px]"
                     }
                   />
-                  <button className={"p-2 bg-customAmber w-[200px] flex items-center justify-center ml-5 text-lg"}>
+                  <button
+                    className={
+                      "p-2 bg-customAmber w-[200px] flex items-center justify-center ml-5 text-lg"
+                    }
+                  >
                     Subscribe
                   </button>
                 </div>
               </div>
             </div>
           </div>
+          <div
+            className={
+              "h-[100px] w-full origin-left flex flex-row items-center justify-evenly mt-5 gap-x-20"
+            }
+          >
+            {bottomBannerData.map((elem, i) => (
+                <BottomBannerComp key={i} icon={elem.icon} title={elem.title} desc={elem.desc} />
+            ))}
+          </div>
+          <Footer />
         </div>
       </div>
     </div>
