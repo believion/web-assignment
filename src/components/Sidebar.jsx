@@ -8,7 +8,7 @@ const Sidebar = () => {
     <>
       <div
           style={{width: isOpen ? "300px" : "150px"}}
-        className={"transition-width duration-150 ease-in-out fixed left-0 top-0 bottom-0 bg-neutral-800/80 border-r-8 border-customAmber z-30 flex flex-col items-start pt-10"}
+        className={"transition-width duration-150 ease-in-out fixed left-0 top-0 bottom-0 bg-neutral-950/80 border-r-8 border-customAmber z-30 flex flex-col items-start pt-10"}
       >
         {isOpen ? (
           <button onClick={() => setIsOpen(false)}>

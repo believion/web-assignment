@@ -17,44 +17,44 @@ const data = [
   {
     img: "/Product1.png",
     title: "Cinnamon Honey",
-    oldPrice: 15.0,
+    oldPrice: "$15.0",
     newPrice: 9.0,
   },
   {
     img: "/Product1.png",
-    title: "Cinnamon Honey",
-    oldPrice: 15.0,
-    newPrice: 9.0,
+    title: "Coconut Oil",
+    oldPrice: "$15.0",
+    newPrice: "$9.0",
+  },
+  {
+    img: "/Product1.png",
+    title: "Mango Honey",
+    oldPrice: "$15.0",
+    newPrice: "$9.0",
+  },
+  {
+    img: "/Product1.png",
+    title: "Honey Habanero",
+    oldPrice: "$15.0",
+    newPrice: "$9.0",
   },
   {
     img: "/Product1.png",
     title: "Cinnamon Honey",
-    oldPrice: 15.0,
-    newPrice: 9.0,
+    oldPrice: "$15.0",
+    newPrice: "$9.0",
   },
   {
     img: "/Product1.png",
     title: "Cinnamon Honey",
-    oldPrice: 15.0,
-    newPrice: 9.0,
+    oldPrice: "$15.0",
+    newPrice: "$9.0",
   },
   {
     img: "/Product1.png",
     title: "Cinnamon Honey",
-    oldPrice: 15.0,
-    newPrice: 9.0,
-  },
-  {
-    img: "/Product1.png",
-    title: "Cinnamon Honey",
-    oldPrice: 15.0,
-    newPrice: 9.0,
-  },
-  {
-    img: "/Product1.png",
-    title: "Cinnamon Honey",
-    oldPrice: 15.0,
-    newPrice: 9.0,
+    oldPrice: "$15.0",
+    newPrice: "$9.0",
   },
 ];
 
@@ -80,7 +80,7 @@ export default function ProductCarousel() {
         >
           {data.map((slide, index) => (
               <SwiperSlide key={index} className="w-full h-full">
-                <ProductCard/>
+                <ProductCard title={slide.title} img={slide.img} newPrice={slide.newPrice} oldPrice={slide.oldPrice}/>
               </SwiperSlide>
           ))}
         </Swiper>

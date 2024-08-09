@@ -143,7 +143,7 @@ function App() {
                 "absolute h-[300px] w-auto bottom-10 z-30 flex flex-col gap-2 p-4 items-center"
               }
             >
-              <h1 className={"uppercase text-2xl font-medium"}>online only</h1>
+              <h1 className={"uppercase text-2xl font-bold"}>online only</h1>
               <div className={"border-2 border-black w-[50px] mt-5"}></div>
               <p className={"text-lg text-center max-w-[300px]"}>
                 GET 20% OFF YOUR ORDER OF $50 OR MORE Use code <b>“Chef20”</b>
